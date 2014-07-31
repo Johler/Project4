@@ -50,16 +50,17 @@ var urlProblem = function(urlInQuestion) {
 };
 
 var upperCaseFirstLetter = function(string) {
-	var 
-		caseReturn
-	;
-}
-
-var swappingStuff = function (stuff) {
-	var
-		stuffReturn
-	;
+	var caseReturn;
 	
+    caseReturn = string.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+	return caseReturn
+};
+
+var swappingStuff = function (string) {
+	var stuffReturn
+	;
+	newstr = string.replace(/text/i, "txt");
+		return newstr;
 };
 
 // Number Functions
@@ -84,5 +85,12 @@ console.log("The string follows an aaa@bbb.ccc pattern just like an email : " + 
 var chosenWebsite = urlProblem("fullsail.edu");
 console.log("The string follows the patter of a true URL : " + chosenWebsite + ".");
 
+var titleCase = upperCaseFirstLetter("my name is jessica");
+console.log(titleCase);
+
+var replace = swappingStuff("Kids Shorten words like text.");
+console.log(replace);
+
 var numberForRound = roundDecimal(3.26506856);
 console.log("This number is rounded to the second decimal : " + numberForRound + ".");
+
